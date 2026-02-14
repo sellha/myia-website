@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+
+    <title>MYIA | Prochainement</title>
+    <meta
+      name="description"
+      content="MYIA arrive bientôt. Laissez votre email pour être informé(e) du lancement."
+    />
+
+    <meta property="og:title" content="MYIA | Prochainement" />
+    <meta
+      property="og:description"
+      content="MYIA arrive bientôt. Laissez votre email pour être informé(e) du lancement."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg__grain"></div>
+      <div class="bg__orb bg__orb--a"></div>
+      <div class="bg__orb bg__orb--b"></div>
+      <div class="bg__orb bg__orb--c"></div>
+    </div>
+
+    <main class="wrap">
+      <a class="brand" href="/" aria-label="MYIA">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">MYIA</span>
+      </a>
+
+      <section class="hero" aria-label="Prochainement">
+        <p class="kicker">Prochainement</p>
+        <h1 class="headline">Une nouvelle expérience arrive bientôt.</h1>
+        <p class="subhead">
+          Laissez votre email et on vous prévient dès l’ouverture.
+        </p>
+
+        <!--
+          Ce formulaire est compatible Netlify (data-netlify="true").
+          Si vous hébergez ailleurs, remplacez l'action par votre endpoint (Formspree, backend, etc.).
+        -->
+        <form
+          class="form"
+          name="notify"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="notify" />
+          <p class="honeypot">
+            <label>Ne pas remplir: <input name="bot-field" /></label>
+          </p>
+
+          <label class="sr-only" for="email">Email</label>
+          <div class="form__row">
+            <input
+              id="email"
+              name="email"
+              class="form__input"
+              type="email"
+              autocomplete="email"
+              placeholder="votre@email.com"
+              inputmode="email"
+              required
+            />
+            <button class="form__btn" type="submit">Me prévenir</button>
+          </div>
+          <p class="form__meta">
+            Pas de spam. Désinscription en 1 clic.
+          </p>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="ctaRow">
+          <a class="ctaLink" href="mailto:contact@myiatech.com"
+            >Contact: contact@myiatech.com</a
+          >
+          <span class="dot" aria-hidden="true"></span>
+          <a class="ctaLink" href="#" id="social-link" rel="me">Réseaux</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small
+          >© <span id="year"></span> MYIA. Tous droits réservés.</small
+        >
+      </footer>
+    </main>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
