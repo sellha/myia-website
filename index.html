@@ -33,143 +33,27 @@
     </div>
 
     <main class="wrap">
-      <header class="top">
-        <a class="brand" href="/" aria-label="MYIA">
+      <section class="coming" aria-label="Coming soon">
+        <div class="logoLockup" aria-label="MYIA logo">
           <img
-            class="brand__logo"
+            class="logoLockup__mark"
             src="/assets/myia-mark.svg"
-            alt=""
-            width="34"
-            height="34"
+            alt="MYIA"
+            width="92"
+            height="92"
             loading="eager"
           />
-          <span class="brand__name">MYIA</span>
-        </a>
-
-        <nav class="nav" aria-label="Navigation">
-          <a class="nav__link" href="#about">About</a>
-          <a class="nav__link" href="#features">Features</a>
-          <a class="nav__link" href="#notify">Launch</a>
-        </nav>
-
-        <a class="pill" href="#notify">Get updates</a>
-      </header>
-
-      <section class="hero" aria-label="Home">
-        <div class="hero__grid">
-          <div class="hero__copy">
-            <p class="kicker">Coming soon</p>
-            <h1 class="headline">
-              A clean, confident interface for moving faster.
-            </h1>
-            <p class="subhead">
-              Built with care: crisp design, strong foundations, and a calm
-              experience. Launching soon.
-            </p>
-
-            <div class="hero__cta">
-              <a class="btn btn--primary" href="#notify">Get notified</a>
-              <a class="btn btn--ghost" href="mailto:contact@myiatech.com"
-                >Contact</a
-              >
-            </div>
-
-            <ul class="trust" aria-label="Highlights">
-              <li class="trust__item">Fast to load</li>
-              <li class="trust__item">Mobile first</li>
-              <li class="trust__item">Secure by default</li>
-            </ul>
-          </div>
-
-          <div class="hero__panel" aria-hidden="true">
-            <div class="panel">
-              <div class="panel__top">
-                <span class="panel__dot"></span>
-                <span class="panel__dot"></span>
-                <span class="panel__dot"></span>
-              </div>
-              <div class="panel__body">
-                <div class="metric">
-                  <div class="metric__k">Time</div>
-                  <div class="metric__v">-38%</div>
-                </div>
-                <div class="metric">
-                  <div class="metric__k">Clarity</div>
-                  <div class="metric__v">+2x</div>
-                </div>
-                <div class="metric">
-                  <div class="metric__k">Friction</div>
-                  <div class="metric__v">-</div>
-                </div>
-                <div class="spark" aria-hidden="true"></div>
-              </div>
-            </div>
-            <div class="panel__shadow"></div>
-          </div>
+          <div class="logoLockup__word">MYIA</div>
         </div>
-      </section>
 
-      <section class="section" id="about" aria-label="About">
-        <h2 class="h2">A MYIA look and feel.</h2>
-        <p class="lead">
-          Minimal, readable, and quiet. A visual language rooted in the MYIA
-          mark: deep ink, generous spacing, and sharp details.
+        <p class="kicker">Coming soon</p>
+        <h1 class="headline">A new experience is on the way.</h1>
+        <p class="subhead">
+          Leave your email and we will notify you when we launch.
         </p>
 
-        <div class="cards">
-          <article class="card">
-            <h3 class="card__t">Precision</h3>
-            <p class="card__p">Crisp type, consistent grids, clean hierarchy.</p>
-          </article>
-          <article class="card">
-            <h3 class="card__t">Trust</h3>
-            <p class="card__p">Contrast, accessibility, performance.</p>
-          </article>
-          <article class="card">
-            <h3 class="card__t">Presence</h3>
-            <p class="card__p">A living background that never steals attention.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="features" aria-label="Features">
-        <div class="split">
-          <div>
-            <h2 class="h2">What MYIA brings</h2>
-            <p class="lead">
-              Replace this copy with your real product story. Keep it simple:
-              one promise, three concrete benefits.
-            </p>
-          </div>
-          <ol class="list">
-            <li class="list__item">
-              <span class="list__n">01</span>
-              <span class="list__t">A clear flow from start to finish</span>
-            </li>
-            <li class="list__item">
-              <span class="list__n">02</span>
-              <span class="list__t">An interface that highlights what matters</span>
-            </li>
-            <li class="list__item">
-              <span class="list__n">03</span>
-              <span class="list__t">A clean, scalable technical foundation</span>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section section--notify" id="notify" aria-label="Launch updates">
-        <div class="notify">
-          <div class="notify__copy">
-            <h2 class="h2">Get the launch email</h2>
-            <p class="lead">
-              Leave your email. We will only write when MYIA goes live.
-            </p>
-          </div>
-        <!--
-          Ce formulaire est compatible Netlify (data-netlify="true").
-          Si vous hébergez ailleurs, remplacez l'action par votre endpoint (Formspree, backend, etc.).
-        -->
+        <div class="notify" id="notify">
+        <!-- Netlify form (data-netlify="true"). -->
         <form
           class="form"
           name="notify"
@@ -202,18 +86,16 @@
           <p class="form__status" role="status" aria-live="polite"></p>
         </form>
         </div>
+
+        <div class="links">
+          <a class="ctaLink" href="mailto:contact@myiatech.com"
+            >contact@myiatech.com</a
+          >
+        </div>
       </section>
 
       <footer class="footer">
-        <div class="footer__row">
-          <small>© <span id="year"></span> MYIA. All rights reserved.</small>
-          <div class="footer__links">
-            <a class="ctaLink" href="mailto:contact@myiatech.com"
-              >contact@myiatech.com</a
-            >
-            <a class="ctaLink" href="#" id="social-link" rel="me">Social</a>
-          </div>
-        </div>
+        <small>© <span id="year"></span> MYIA. All rights reserved.</small>
       </footer>
     </main>
 
