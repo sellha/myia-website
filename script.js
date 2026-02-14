@@ -2,15 +2,10 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Submit via AJAX so the user stays on the same page (no Netlify 404 redirect).
+  // Submit via AJAX so the user stays on the same page.
   const form = document.querySelector("form[name='notify']");
   const status = document.querySelector(".form__status");
   if (form && status) {
-    const encode = (data) =>
-      Object.keys(data)
-        .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
-        .join("&");
-
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -22,23 +17,31 @@
       status.textContent = "";
 
       try {
-        const payload = {};
-        new FormData(form).forEach((value, key) => {
-          payload[key] = String(value);
-        });
+        const action = form.getAttribute("action") || "";
+        if (action.includes("REPLACE_ME")) {
+          status.textContent =
+            "Form setup is not finished yet. Create a free Formspree form and paste the endpoint into the site.";
+          return;
+        }
 
-        await fetch("/", {
+        const formData = new FormData(form);
+        const res = await fetch(action, {
           method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode(payload),
+          body: formData,
+          headers: { Accept: "application/json" },
         });
 
-        status.textContent =
-          "Thank you. We would love to reach out as soon as we have news about the project.";
-        form.reset();
+        if (res.ok) {
+          status.textContent =
+            "Thank you. We would love to reach out as soon as we have updates on the project.";
+          form.reset();
+        } else {
+          status.textContent =
+            "Could not submit right now. Please try again, or email us at contact@myiatech.com.";
+        }
       } catch {
         status.textContent =
-          "Something went wrong. Please try again, or email us at contact@myiatech.com.";
+          "Could not submit right now. Please try again, or email us at contact@myiatech.com.";
       } finally {
         if (submitBtn) submitBtn.disabled = false;
         if (submitBtn) submitBtn.textContent = originalBtnText || "Get notified";

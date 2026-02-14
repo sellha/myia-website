@@ -216,7 +216,7 @@ body {
 }
 
 .honeypot {
-  display: none;
+  display: none !important;
 }
 
 .form__row {

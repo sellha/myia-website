@@ -45,25 +45,19 @@
         </p>
 
         <div class="notify" id="notify">
-        <!-- Netlify form (data-netlify="true"). -->
+        <!-- Formspree (free tier). Replace REPLACE_ME with your real Formspree form id. -->
         <form
           class="form"
           name="notify"
           method="POST"
-          action="/thanks/"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
+          action="https://formspree.io/f/REPLACE_ME"
         >
-          <input type="hidden" name="form-name" value="notify" />
-          <input type="hidden" name="subject" value="MYIA: Launch updates request" />
           <input
             type="hidden"
             name="message"
-            value="I'd like to be notified when you have updates about the MYIA project."
+            value="I'd like to be notified when you have news about the MYIA project."
           />
-          <p class="honeypot">
-            <label>Do not fill: <input name="bot-field" /></label>
-          </p>
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
 
           <label class="sr-only" for="email">Email</label>
           <div class="form__row">
