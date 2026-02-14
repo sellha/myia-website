@@ -18,11 +18,6 @@
 
       try {
         const action = form.getAttribute("action") || "";
-        if (action.includes("REPLACE_ME")) {
-          status.textContent =
-            "Form setup is not finished yet. Create a free Formspree form and paste the endpoint into the site.";
-          return;
-        }
 
         const formData = new FormData(form);
         const res = await fetch(action, {
