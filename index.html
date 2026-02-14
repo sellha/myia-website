@@ -25,13 +25,6 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="bg" aria-hidden="true">
-      <div class="bg__grain"></div>
-      <div class="bg__orb bg__orb--a"></div>
-      <div class="bg__orb bg__orb--b"></div>
-      <div class="bg__orb bg__orb--c"></div>
-    </div>
-
     <main class="wrap">
       <section class="coming" aria-label="Coming soon">
         <div class="logoLockup" aria-label="MYIA logo">
@@ -45,10 +38,10 @@
           />
         </div>
 
-        <p class="kicker">Coming soon</p>
-        <h1 class="headline">A new experience is on the way.</h1>
+        <h1 class="headline">COMING SOON</h1>
         <p class="subhead">
-          Leave your email and we will notify you when we launch.
+          Leave your email and we will notify you when we have news about the
+          project.
         </p>
 
         <div class="notify" id="notify">
@@ -61,6 +54,11 @@
           netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="notify" />
+          <input
+            type="hidden"
+            name="message"
+            value="I would like to be notified once you have news about the project."
+          />
           <p class="honeypot">
             <label>Do not fill: <input name="bot-field" /></label>
           </p>
