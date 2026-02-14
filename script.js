@@ -34,7 +34,7 @@
         });
 
         status.textContent =
-          "Thank you. We would love to reach out when we have news about the project.";
+          "Thank you. We would love to reach out as soon as we have news about the project.";
         form.reset();
       } catch {
         status.textContent =

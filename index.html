@@ -50,14 +50,16 @@
           class="form"
           name="notify"
           method="POST"
+          action="/thanks/"
           data-netlify="true"
           netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="notify" />
+          <input type="hidden" name="subject" value="MYIA: Launch updates request" />
           <input
             type="hidden"
             name="message"
-            value="I would like to be notified once you have news about the project."
+            value="I'd like to be notified when you have updates about the MYIA project."
           />
           <p class="honeypot">
             <label>Do not fill: <input name="bot-field" /></label>
