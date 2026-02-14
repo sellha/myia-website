@@ -7,7 +7,7 @@
   if (social) {
     social.addEventListener("click", (e) => {
       e.preventDefault();
-      alert("Ajoutez ici le lien vers vos réseaux (Instagram, LinkedIn, etc.).");
+      alert("Add your social link (Instagram, LinkedIn, etc.).");
     });
   }
 
@@ -16,8 +16,7 @@
   const status = document.querySelector(".form__status");
   if (form && status) {
     form.addEventListener("submit", () => {
-      status.textContent = "Merci. On vous tient au courant.";
+      status.textContent = "Thanks. We will email you at launch.";
     });
   }
 })();
-

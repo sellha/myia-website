@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="MYIA">
+  <title>MYIA</title>
+  <defs>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13283e"/>
+      <stop offset="1" stop-color="#0f2134"/>
+    </linearGradient>
+  </defs>
+  <!-- Dot -->
+  <circle cx="128" cy="58" r="26" fill="url(#ink)"/>
+  <!-- Rounded "m" mark (approximation of the provided logo) -->
+  <path
+    d="M56 188
+       C56 146 66 116 88 96
+       C104 81 124 78 141 86
+       C155 92 166 105 174 120
+       C182 105 193 92 207 86
+       C224 78 244 81 260 96"
+    fill="none"
+    stroke="url(#ink)"
+    stroke-width="32"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(-30 0)"
+  />
+</svg>
+
