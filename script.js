@@ -26,12 +26,15 @@
       emailInput.addEventListener("input", () => {
         setEmailMessage();
         status.textContent = "";
+        status.classList.remove("is-error");
         emailInput.removeAttribute("aria-invalid");
+        emailInput.removeAttribute("data-invalid");
       });
 
       emailInput.addEventListener("invalid", () => {
         setEmailMessage();
         emailInput.setAttribute("aria-invalid", "true");
+        emailInput.setAttribute("data-invalid", "true");
       });
     }
 
@@ -42,9 +45,11 @@
         setEmailMessage();
         if (!emailInput.checkValidity()) {
           emailInput.setAttribute("aria-invalid", "true");
+          emailInput.setAttribute("data-invalid", "true");
           status.textContent =
             "Please enter a valid email address (example: name@domain.com).";
-          emailInput.reportValidity();
+          status.classList.add("is-error");
+          emailInput.focus();
           return;
         }
       }
@@ -55,6 +60,7 @@
       if (submitBtn) submitBtn.textContent = "Sending...";
 
       status.textContent = "";
+      status.classList.remove("is-error");
 
       try {
         const action = form.getAttribute("action") || "";
@@ -73,10 +79,12 @@
         } else {
           status.textContent =
             "Could not submit right now. Please try again, or email us at contact@myiatech.com.";
+          status.classList.add("is-error");
         }
       } catch {
         status.textContent =
           "Could not submit right now. Please try again, or email us at contact@myiatech.com.";
+        status.classList.add("is-error");
       } finally {
         if (submitBtn) submitBtn.disabled = false;
         if (submitBtn) submitBtn.textContent = originalBtnText || "Get notified";
