@@ -2,40 +2,6 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Copy-to-clipboard fallback for users without a mail client configured.
-  document.querySelectorAll("[data-copy]").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const value = btn.getAttribute("data-copy") || "";
-      if (!value) return;
-
-      const original = btn.textContent;
-      const done = () => {
-        btn.textContent = "Copied";
-        setTimeout(() => (btn.textContent = original), 1200);
-      };
-
-      try {
-        await navigator.clipboard.writeText(value);
-        done();
-      } catch {
-        // Old browsers: use a temporary textarea.
-        const ta = document.createElement("textarea");
-        ta.value = value;
-        ta.setAttribute("readonly", "true");
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-          document.execCommand("copy");
-          done();
-        } finally {
-          document.body.removeChild(ta);
-        }
-      }
-    });
-  });
-
   // Submit via AJAX and then redirect to a branded thank-you page.
   const form = document.querySelector("form[name='notify']");
   const status = document.querySelector(".form__status");
