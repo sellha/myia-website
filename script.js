@@ -6,8 +6,48 @@
   const form = document.querySelector("form[name='notify']");
   const status = document.querySelector(".form__status");
   if (form && status) {
+    const emailInput = form.querySelector("input[name='email']");
+    const setEmailMessage = () => {
+      if (!emailInput) return;
+
+      // Use built-in validation first, but provide friendly copy.
+      if (emailInput.validity.valueMissing) {
+        emailInput.setCustomValidity("Please enter your email address.");
+      } else if (emailInput.validity.typeMismatch) {
+        emailInput.setCustomValidity(
+          "That email address does not look correct. Example: name@domain.com"
+        );
+      } else {
+        emailInput.setCustomValidity("");
+      }
+    };
+
+    if (emailInput) {
+      emailInput.addEventListener("input", () => {
+        setEmailMessage();
+        status.textContent = "";
+        emailInput.removeAttribute("aria-invalid");
+      });
+
+      emailInput.addEventListener("invalid", () => {
+        setEmailMessage();
+        emailInput.setAttribute("aria-invalid", "true");
+      });
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      if (emailInput) {
+        setEmailMessage();
+        if (!emailInput.checkValidity()) {
+          emailInput.setAttribute("aria-invalid", "true");
+          status.textContent =
+            "Please enter a valid email address (example: name@domain.com).";
+          emailInput.reportValidity();
+          return;
+        }
+      }
 
       const submitBtn = form.querySelector("button[type='submit']");
       const originalBtnText = submitBtn ? submitBtn.textContent : "";
