@@ -73,6 +73,7 @@
           name="notify"
           method="POST"
           action="https://formspree.io/f/mjgewren"
+          novalidate
         >
           <input
             type="hidden"
@@ -91,10 +92,12 @@
               autocomplete="email"
               placeholder="you@example.com"
               inputmode="email"
+              aria-describedby="email-msg"
               required
             />
             <button class="form__btn" type="submit">Get notified</button>
           </div>
+          <p class="fieldMsg" id="email-msg" aria-live="polite"></p>
           <p class="form__meta">
             No spam. Unsubscribe anytime.
           </p>

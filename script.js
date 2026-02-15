@@ -5,36 +5,35 @@
   // Submit via AJAX and then redirect to a branded thank-you page.
   const form = document.querySelector("form[name='notify']");
   const status = document.querySelector(".form__status");
+  const fieldMsg = document.getElementById("email-msg");
+  const row = document.querySelector(".form__row");
   if (form && status) {
     const emailInput = form.querySelector("input[name='email']");
-    const setEmailMessage = () => {
-      if (!emailInput) return;
+    const setRowState = (state) => {
+      if (!row) return;
+      if (!state) row.removeAttribute("data-state");
+      else row.setAttribute("data-state", state);
+    };
 
-      // Use built-in validation first, but provide friendly copy.
-      if (emailInput.validity.valueMissing) {
-        emailInput.setCustomValidity("Please enter your email address.");
-      } else if (emailInput.validity.typeMismatch) {
-        emailInput.setCustomValidity(
-          "That email address does not look correct. Example: name@domain.com"
-        );
-      } else {
-        emailInput.setCustomValidity("");
-      }
+    const setFieldMessage = (msg, isError) => {
+      if (!fieldMsg) return;
+      fieldMsg.textContent = msg || "";
+      fieldMsg.classList.toggle("is-error", Boolean(isError));
+    };
+
+    const isValidEmail = (raw) => {
+      const v = String(raw || "").trim();
+      if (!v) return false;
+      // Pragmatic validation (good UX) without being overly strict.
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     };
 
     if (emailInput) {
       emailInput.addEventListener("input", () => {
-        setEmailMessage();
+        setRowState("");
+        setFieldMessage("", false);
         status.textContent = "";
         status.classList.remove("is-error");
-        emailInput.removeAttribute("aria-invalid");
-        emailInput.removeAttribute("data-invalid");
-      });
-
-      emailInput.addEventListener("invalid", () => {
-        setEmailMessage();
-        emailInput.setAttribute("aria-invalid", "true");
-        emailInput.setAttribute("data-invalid", "true");
       });
     }
 
@@ -42,13 +41,13 @@
       e.preventDefault();
 
       if (emailInput) {
-        setEmailMessage();
-        if (!emailInput.checkValidity()) {
-          emailInput.setAttribute("aria-invalid", "true");
-          emailInput.setAttribute("data-invalid", "true");
-          status.textContent =
-            "Please enter a valid email address (example: name@domain.com).";
-          status.classList.add("is-error");
+        const ok = isValidEmail(emailInput.value);
+        if (!ok) {
+          setRowState("error");
+          setFieldMessage(
+            "That email address does not look correct. Example: name@domain.com",
+            true
+          );
           emailInput.focus();
           return;
         }
@@ -61,6 +60,8 @@
 
       status.textContent = "";
       status.classList.remove("is-error");
+      setRowState("");
+      setFieldMessage("", false);
 
       try {
         const action = form.getAttribute("action") || "";
