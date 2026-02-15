@@ -330,16 +330,32 @@ body {
   margin-top: 16px;
   font-size: 13px;
   color: var(--muted2);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .ctaLink {
-  color: rgba(15, 33, 52, 0.76);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(19, 40, 62, 0.16);
+  background: rgba(239, 231, 219, 0.18);
+  color: rgba(15, 33, 52, 0.86);
   text-decoration: none;
-  border-bottom: 1px solid rgba(15, 33, 52, 0.18);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .ctaLink:hover {
-  border-bottom-color: rgba(18, 16, 20, 0.35);
+  background: rgba(239, 231, 219, 0.26);
+  border-color: rgba(19, 40, 62, 0.22);
 }
 
 .footer {
