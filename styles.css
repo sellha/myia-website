@@ -358,6 +358,33 @@ body {
   border-color: rgba(19, 40, 62, 0.22);
 }
 
+.copyBtn {
+  appearance: none;
+  border: 1px solid rgba(19, 40, 62, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+  color: rgba(15, 33, 52, 0.86);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 140ms ease, border-color 140ms ease,
+    transform 120ms ease;
+}
+
+.copyBtn:hover {
+  background: rgba(239, 231, 219, 0.22);
+  border-color: rgba(19, 40, 62, 0.22);
+  transform: translateY(-1px);
+}
+
+.copyBtn:active {
+  transform: translateY(0px);
+}
+
 .footer {
   color: var(--muted2);
   font-size: 13px;
