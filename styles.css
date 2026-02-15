@@ -358,6 +358,21 @@ body {
   border-color: rgba(19, 40, 62, 0.22);
 }
 
+/* Desktop: show the email as text-only (not clickable). */
+.ctaLink--email {
+  pointer-events: none;
+  cursor: default;
+  user-select: text;
+}
+
+/* Mobile/tablet touch devices: enable click-to-email. */
+@media (hover: none) and (pointer: coarse) {
+  .ctaLink--email {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
 .footer {
   color: var(--muted2);
   font-size: 13px;
