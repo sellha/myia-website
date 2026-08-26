@@ -92,4 +92,23 @@
       }
     });
   }
+
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    const originalText = button.textContent;
+
+    button.addEventListener("click", async () => {
+      const value = button.getAttribute("data-copy") || "";
+      if (!value) return;
+
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1800);
+      } catch {
+        window.location.href = `mailto:${value}`;
+      }
+    });
+  });
 })();
