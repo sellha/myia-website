@@ -467,3 +467,299 @@ body::after {
     scroll-behavior: auto !important;
   }
 }
+
+/* Creative motion layer */
+.ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.ribbon {
+  position: absolute;
+  width: 520px;
+  height: 120px;
+  border: 1px solid rgba(15, 33, 52, 0.12);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 999px;
+  filter: blur(0.2px);
+  opacity: 0.64;
+  transform-origin: center;
+}
+
+.ribbon::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 12%;
+  width: 72%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(15, 33, 52, 0.38), transparent);
+  transform: translateY(-50%);
+}
+
+.ribbon--a {
+  right: -160px;
+  top: 13%;
+  rotate: -22deg;
+  animation: ribbonA 11s ease-in-out infinite;
+}
+
+.ribbon--b {
+  left: -220px;
+  bottom: 17%;
+  width: 620px;
+  rotate: 18deg;
+  opacity: 0.42;
+  animation: ribbonB 13s ease-in-out infinite;
+}
+
+.ribbon--c {
+  right: 24%;
+  bottom: -58px;
+  width: 420px;
+  height: 92px;
+  rotate: 7deg;
+  opacity: 0.32;
+  animation: ribbonC 15s ease-in-out infinite;
+}
+
+.heroCopy > * {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: revealUp 820ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.heroCopy > :nth-child(1) { animation-delay: 240ms; }
+.heroCopy > :nth-child(2) { animation-delay: 340ms; }
+.heroCopy > :nth-child(3) { animation-delay: 450ms; }
+.heroCopy > :nth-child(4) { animation-delay: 560ms; }
+.heroCopy > :nth-child(5) { animation-delay: 660ms; }
+.heroCopy > :nth-child(6) { animation-delay: 760ms; }
+.heroCopy > :nth-child(7) { animation-delay: 860ms; }
+
+.kicker {
+  position: relative;
+  overflow: hidden;
+}
+
+.kicker::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.7) 42%, transparent 70%);
+  transform: translateX(-120%);
+  animation: glint 4.8s ease-in-out 1.4s infinite;
+}
+
+.headline {
+  text-shadow: 0 20px 50px rgba(15, 33, 52, 0.1);
+}
+
+.headline span {
+  background: linear-gradient(90deg, rgba(15, 33, 52, 0.86), rgba(23, 49, 75, 0.56), rgba(15, 33, 52, 0.88));
+  background-size: 180% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: inkFlow 7s ease-in-out infinite;
+}
+
+.signalList li {
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.signalList li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 33, 52, 0.26);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.launchSignal {
+  position: relative;
+  width: min(420px, 100%);
+  height: 2px;
+  margin-top: 28px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 33, 52, 0.1);
+}
+
+.launchSignal span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 42%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgba(15,33,52,0.86), transparent);
+  animation: scanSignal 2.8s cubic-bezier(.6,0,.2,1) infinite;
+}
+
+.logoStage {
+  perspective: 900px;
+}
+
+.signalRing {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 33, 52, 0.16);
+  mask-image: conic-gradient(from 0deg, black 0 62deg, transparent 62deg 112deg, black 112deg 190deg, transparent 190deg 248deg, black 248deg 320deg, transparent 320deg 360deg);
+  pointer-events: none;
+}
+
+.signalRing--a {
+  width: min(78vw, 448px);
+  height: min(78vw, 448px);
+  animation: ringOrbit 16s linear infinite;
+}
+
+.signalRing--b {
+  width: min(64vw, 358px);
+  height: min(64vw, 358px);
+  border-color: rgba(15, 33, 52, 0.22);
+  animation: ringOrbit 12s linear infinite reverse;
+}
+
+.signalRing--c {
+  width: min(48vw, 266px);
+  height: min(48vw, 266px);
+  border-color: rgba(15, 33, 52, 0.12);
+  animation: ringOrbit 9s linear infinite;
+}
+
+.signalBeam {
+  position: absolute;
+  width: min(46vw, 310px);
+  height: min(46vw, 310px);
+  border-radius: 50%;
+  background: conic-gradient(from 110deg, transparent 0 72%, rgba(255,255,255,.72), transparent 86% 100%);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  animation: beamSweep 7s ease-in-out infinite;
+}
+
+.logoLockup {
+  transform-style: preserve-3d;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.logoLockup::before,
+.logoLockup::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.logoLockup::before {
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,.88);
+  background: linear-gradient(135deg, rgba(255,255,255,.68), transparent 38%, rgba(15,33,52,.08));
+  mask-image: linear-gradient(#000, transparent 68%);
+}
+
+.logoLockup::after {
+  inset: 12%;
+  border-radius: 34px;
+  background: radial-gradient(circle at 50% 30%, rgba(15,33,52,.11), transparent 56%);
+  filter: blur(22px);
+  transform: translateZ(-1px);
+}
+
+.logoStage:hover .logoLockup {
+  transform: translateY(-10px) rotateX(4deg) rotateY(-6deg) rotate(-1deg);
+  box-shadow: 0 34px 82px rgba(15, 33, 52, 0.2);
+}
+
+.orbitDot {
+  animation: pulseDot 3.8s ease-in-out infinite;
+}
+
+.orbitDot--b { animation-delay: .8s; }
+.orbitDot--c { animation-delay: 1.5s; }
+
+.form__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.form__btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.28), transparent 72%);
+  transform: translateX(-130%);
+  animation: buttonSheen 4.2s ease-in-out 1.2s infinite;
+}
+
+@keyframes revealUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glint {
+  0%, 55% { transform: translateX(-120%); }
+  75%, 100% { transform: translateX(120%); }
+}
+
+@keyframes inkFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes scanSignal {
+  0% { transform: translateX(-110%); opacity: 0; }
+  18% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { transform: translateX(250%); opacity: 0; }
+}
+
+@keyframes ringOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes beamSweep {
+  0%, 100% { transform: rotate(0deg) scale(.96); opacity: .42; }
+  50% { transform: rotate(145deg) scale(1.03); opacity: .78; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: .8; }
+  50% { transform: scale(1.35); opacity: 1; }
+}
+
+@keyframes ribbonA {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(-28px, 16px, 0) scale(1.04); }
+}
+
+@keyframes ribbonB {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(34px, -18px, 0) scale(1.03); }
+}
+
+@keyframes ribbonC {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0, -20px, 0); }
+}
+
+@keyframes buttonSheen {
+  0%, 60% { transform: translateX(-130%); }
+  82%, 100% { transform: translateX(130%); }
+}
+
+@media (max-width: 860px) {
+  .launchSignal { margin-left: auto; margin-right: auto; }
+  .ribbon--a { right: -260px; top: 8%; }
+  .ribbon--b { left: -300px; }
+}
+
+@media (max-width: 560px) {
+  .ribbon { opacity: 0.34; }
+  .signalRing--a { width: 310px; height: 310px; }
+  .signalRing--b { width: 250px; height: 250px; }
+  .signalRing--c { width: 190px; height: 190px; }
+}
