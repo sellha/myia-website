@@ -33,7 +33,6 @@
     <link rel="icon" href="/favicon-16.png?v=9" sizes="16x16" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=9" sizes="180x180" />
     <link rel="manifest" href="/site.webmanifest" />
-
     <link rel="stylesheet" href="/styles.css" />
 
     <script type="application/ld+json">
@@ -48,75 +47,108 @@
   </head>
   <body>
     <main class="wrap">
-      <div class="topRail" aria-hidden="true">
-        <div class="topRail__track">
-          <span>MyFeed</span>
-          <span>MyProfil</span>
-          <span>MyMessage</span>
-          <span>MyCall</span>
-          <span>MyMatch</span>
-          <span>Personal AI</span>
-          <span>Private Europe</span>
-        </div>
-      </div>
-
       <section class="coming" aria-label="MYIA coming soon">
-        <div class="ambient" aria-hidden="true">
-          <span class="glow glow--a"></span>
-          <span class="glow glow--b"></span>
-          <span class="line line--a"></span>
-          <span class="line line--b"></span>
+        <div class="topLine" aria-hidden="true">
+          <span>Private social mobile app</span>
+          <span>European infrastructure</span>
+          <span>Personal AI assistant</span>
+        </div>
+
+        <div class="brandMark">
+          <img src="/myia-logo-transparent.png" alt="MYIA" width="220" height="213" />
         </div>
 
         <div class="heroCopy">
-          <div class="brandIntro">
-            <img src="/myia-logo.png" alt="MYIA" width="84" height="84" />
-            <span>MYIA</span>
-          </div>
-          <p class="kicker">Private European social app</p>
-          <h1 class="headline">A new social maison is coming.</h1>
+          <p class="kicker">MYIA is coming soon</p>
+          <h1 class="headline">A private social universe, guided by personal AI.</h1>
           <p class="subhead">
-            MYIA gathers your feed, profile, messages, calls, encounters and personal
-            AI assistant inside one refined mobile experience: fluid, private and
-            built around a controlled European infrastructure.
+            MYIA brings feed, profile, messaging, audio and video calls, encounters,
+            and an intelligent personal assistant into one elegant mobile experience.
           </p>
+        </div>
 
-          <div class="notify" id="notify">
-            <form
-              class="form"
-              name="notify"
-              method="POST"
-              action="https://formspree.io/f/mjgewren"
-              novalidate
-            >
-              <input
-                type="hidden"
-                name="message"
-                value="I'd like to be notified when you have news about the MYIA project."
-              />
-              <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        <div class="productScene" aria-label="MYIA product pillars">
+          <article class="assistantCore">
+            <span class="eyebrow">Core intelligence</span>
+            <h2>MyAssistant</h2>
+            <p>
+              A self-hosted AI companion that understands your profile, preferences
+              and usage to support every social moment.
+            </p>
+          </article>
 
-              <label class="sr-only" for="email">Email</label>
-              <div class="form__row">
-                <input
-                  id="email"
-                  name="email"
-                  class="form__input"
-                  type="email"
-                  autocomplete="email"
-                  placeholder="you@example.com"
-                  inputmode="email"
-                  aria-describedby="email-msg"
-                  required
-                />
-                <button class="form__btn" type="submit">Get notified</button>
-              </div>
-              <p class="fieldMsg" id="email-msg" aria-live="polite"></p>
-              <p class="form__meta">Join the early list. No spam, only meaningful MYIA updates.</p>
-              <p class="form__status" role="status" aria-live="polite"></p>
-            </form>
+          <div class="universeRail">
+            <article class="universeCard">
+              <span>01</span>
+              <h3>MyFeed</h3>
+              <p>Publish, discover and react.</p>
+            </article>
+            <article class="universeCard">
+              <span>02</span>
+              <h3>MyProfil</h3>
+              <p>Your controlled social identity.</p>
+            </article>
+            <article class="universeCard">
+              <span>03</span>
+              <h3>MyMessage</h3>
+              <p>Text, photos, videos and voice.</p>
+            </article>
+            <article class="universeCard">
+              <span>04</span>
+              <h3>MyCall</h3>
+              <p>Audio and video calls.</p>
+            </article>
+            <article class="universeCard">
+              <span>05</span>
+              <h3>MyMatch</h3>
+              <p>New encounters with intention.</p>
+            </article>
           </div>
+        </div>
 
+        <div class="notify" id="notify">
+          <form
+            class="form"
+            name="notify"
+            method="POST"
+            action="https://formspree.io/f/mjgewren"
+            novalidate
+          >
+            <input
+              type="hidden"
+              name="message"
+              value="I'd like to be notified when you have news about the MYIA project."
+            />
+            <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+            <label class="sr-only" for="email">Email</label>
+            <div class="form__row">
+              <input
+                id="email"
+                name="email"
+                class="form__input"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                inputmode="email"
+                aria-describedby="email-msg"
+                required
+              />
+              <button class="form__btn" type="submit">Get notified</button>
+            </div>
+            <p class="fieldMsg" id="email-msg" aria-live="polite"></p>
+            <p class="form__meta">Early access updates only. No spam.</p>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="bottomBar">
+          <ul class="trustRow" aria-label="MYIA product values">
+            <li>Secure media</li>
+            <li>Real-time social</li>
+            <li>Controlled infrastructure</li>
+            <li>Self-hosted AI</li>
+          </ul>
           <div class="links">
             <a
               class="ctaLink ctaLink--email"
@@ -126,72 +158,6 @@
             <button class="ctaLink copyBtn" type="button" data-copy="contact@myiatech.com">
               Copy email
             </button>
-          </div>
-        </div>
-
-        <div class="heroVisual" aria-hidden="true">
-          <div class="luxuryPanel">
-            <div class="panelTop">
-              <span>Coming soon</span>
-              <span>01 / 05 universes</span>
-            </div>
-
-            <div class="phoneScene">
-              <span class="orbit orbit--a"></span>
-              <span class="orbit orbit--b"></span>
-              <div class="phoneMock">
-                <div class="phoneHeader">
-                  <img src="/myia-logo.png" alt="" width="56" height="56" />
-                  <div>
-                    <strong>MYIA</strong>
-                    <span>Private social universe</span>
-                  </div>
-                </div>
-
-                <div class="appGrid">
-                  <div class="appTile appTile--feed"><strong>MyFeed</strong><span>Share & discover</span></div>
-                  <div class="appTile appTile--profile"><strong>MyProfil</strong><span>Identity</span></div>
-                  <div class="appTile appTile--message"><strong>MyMessage</strong><span>Text, media, voice</span></div>
-                  <div class="appTile appTile--call"><strong>MyCall</strong><span>Audio & video</span></div>
-                  <div class="appTile appTile--match"><strong>MyMatch</strong><span>New encounters</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="universeGrid" aria-label="MYIA universes">
-              <article class="universeCard">
-                <span>01</span>
-                <h2>MyFeed</h2>
-                <p>Publish and discover content with intention.</p>
-              </article>
-              <article class="universeCard">
-                <span>02</span>
-                <h2>MyProfil</h2>
-                <p>One social identity, controlled by you.</p>
-              </article>
-              <article class="universeCard">
-                <span>03</span>
-                <h2>MyMessage</h2>
-                <p>Text, photos, videos and voice notes.</p>
-              </article>
-              <article class="universeCard">
-                <span>04</span>
-                <h2>MyCall</h2>
-                <p>Audio and video calls in real time.</p>
-              </article>
-              <article class="universeCard universeCard--wide">
-                <span>05</span>
-                <h2>MyMatch</h2>
-                <p>Meet new people through a smarter matching layer.</p>
-              </article>
-            </div>
-
-            <ul class="trustRow" aria-label="MYIA product values">
-              <li>Secure media</li>
-              <li>Real-time social</li>
-              <li>Controlled infrastructure</li>
-              <li>Self-hosted AI assistant</li>
-            </ul>
           </div>
         </div>
       </section>
