@@ -1,11 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect x="8" y="8" width="48" height="48" rx="16" fill="#13283e"/>
-  <path d="M32 21a5 5 0 1 1 0 10a5 5 0 0 1 0-10z" fill="#fbfaf7"/>
+  <title>MYIA</title>
+  <circle cx="32" cy="13" r="6.7" fill="#13283e"/>
   <path
-    d="M18 44c0-7 2-12 6-15c4-3 9-2 13 5c4-7 9-8 13-5c4 3 6 8 6 15"
+    d="M10.8 49.6
+       C10.8 34.6 15 24 23.2 24
+       C28.3 24 31.1 30.2 34.8 38
+       C38.8 29.8 43.7 24 49.1 24
+       C55.7 24 58.2 34.2 54.6 49.6"
     fill="none"
-    stroke="#fbfaf7"
-    stroke-width="5.5"
+    stroke="#13283e"
+    stroke-width="7.6"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
