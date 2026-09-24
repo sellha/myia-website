@@ -1244,3 +1244,64 @@ body::before {
   .sticker { display: none; }
   .headline { max-width: 8ch; }
 }
+
+/* Stability pass: keep the Gen Z energy without layout explosions. */
+.coming {
+  overflow: hidden;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.86fr);
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.headline {
+  max-width: 9.2ch;
+  font-size: clamp(54px, 8.4vw, 112px);
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+  overflow: visible;
+}
+
+.headline span {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 0.04em;
+  letter-spacing: -0.08em;
+  background: linear-gradient(98deg, #0f2134 0%, #54d6c6 42%, #ff7f68 70%, #0f2134 100%);
+  background-size: 210% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: inkFlow 7s ease-in-out infinite;
+}
+
+.launchSignal {
+  max-width: 460px;
+}
+
+.logoStage {
+  min-height: clamp(340px, 40vw, 520px);
+}
+
+@media (max-width: 860px) {
+  .coming {
+    overflow: hidden;
+    grid-template-columns: 1fr;
+  }
+
+  .headline {
+    max-width: 8.8ch;
+    font-size: clamp(52px, 13vw, 96px);
+  }
+}
+
+@media (max-width: 560px) {
+  .headline {
+    max-width: 8.4ch;
+    font-size: clamp(46px, 15vw, 72px);
+    letter-spacing: -0.06em;
+  }
+}
